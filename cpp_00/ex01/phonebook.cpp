@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.hpp"
 
-Phonebook::Phonebook(){};
-
-Phonebook::~phonebook(){};
+Phonebook::Phonebook(){
+    this->index = 0;
+    std::cout <<"this is constrctor index is" <<this->index;
+};
+Phonebook::~Phonebook(){};
 

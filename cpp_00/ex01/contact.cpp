@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "contact.hpp"
 
-Contact::Contact() {};
+Contact::Contact(void) {
+    
+};
 
 Contact::~Contact() {};
 

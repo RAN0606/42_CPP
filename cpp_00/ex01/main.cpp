@@ -10,4 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.hpp"
+
+int main ()
+{
+    Phonebook phonebook_rliu;
+    return (1);
+}

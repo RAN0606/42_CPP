@@ -25,8 +25,11 @@ class Phonebook {
 		void	show_menu(void);
 		void	add_contact(void);
 		void	search_contact(void);
+		int		index;
 
 	private:
+		
 		Contact contacts[8];
-}
+};
+#endif
 
