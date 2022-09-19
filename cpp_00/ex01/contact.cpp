@@ -12,9 +12,9 @@
 
 #include "contact.hpp"
 
-Contact::Contact(void) {
-    
+Contact::Contact(void){
+    this->is_save = 0;
 };
 
-Contact::~Contact() {};
+Contact::~Contact(void) {};
 

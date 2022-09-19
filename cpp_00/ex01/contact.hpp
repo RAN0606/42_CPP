@@ -18,10 +18,10 @@
 class Contact{
 
 	public:
-		Contact(void);
+		Contact(int save);
 		~Contact(void);
 		
-		int			index;
+		int			is_save;
 		std::string	first_name;
 		std::string	last_name;	
 		std::string	nick_name;
