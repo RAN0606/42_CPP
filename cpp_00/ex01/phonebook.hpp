@@ -21,8 +21,8 @@ class Phonebook {
 		Phonebook(void);
 		~Phonebook(void);
 
-		void	exit(void);
-		void	show_menu(void);
+		void	start_phonebook(void);
+		int		show_menu(void);
 		void	add_contact(void);
 		void	search_contact(void);
 		int		index;
