@@ -13,7 +13,12 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include "contact.hpp"
+# include "contact.hpp"
+# include <iostream>
+# include <string>
+# include <iomanip>
+
+
 
 class Phonebook {
 	
@@ -21,14 +26,14 @@ class Phonebook {
 		Phonebook(void);
 		~Phonebook(void);
 
-		void	start_phonebook(void);
 		int		show_menu(void);
 		void	add_contact(void);
 		void	search_contact(void);
+		void	start_phonebook(void);
+	
 		int		index;
 
-	private:
-		
+	private:	
 		Contact contacts[8];
 };
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int main (void)
-{
-    Phonebook phonebook_rliu;
+# include "contact.hpp"
+# include "phonebook.hpp"
+# include <iostream>
+# include <iomanip>
+# include <string>
 
-    phonebook_rliu.start_phonebook();
-    return (0);
-}
+
+#endif

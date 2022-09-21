@@ -24,25 +24,26 @@ void Phonebook::add_contact(void){
         this->index = 0;
 };
 
+
 int Phonebook::show_menu(void){
     if (contacts[0].check_contact() == 0){
         std::cout << "This phonebook is empty now!";
         return (0);
     }
-    std::cout << std::setw(10) << "First name" << "|"\
-              << std::setw(10) << "Last name" << "|"\
-             << std::setw(10) << "Nickname" << "|"\
-             << std::setw(10) << "Phone number" << std::endl;
-    for(int i = 0; i < 8 && contacts[i].check_contact > 0; i++){
-        std::cout << std::setw(10) << contacts[i].get_first_name() << "|"\
-              << std::setw(10) << contacts[i].get_last_name() << "|"\
-             << std::setw(10) << contacts[i].get_nick_name()  << "|"\
-             << std::setw(10) << contacts[i].get_number()  << std::endl;
+    std::cout << std::setw(10) << "Index" << "|"\
+              << std::setw(10) << "First name" << "|"\
+             << std::setw(10) << "Last name" << "|"\
+             << std::setw(10) << "nickname" << std::endl;
+    for(int i = 0; i < 8 && contacts[i].check_contact() > 0; i++){
+        std::cout << std::setw(10) << contacts[i].get_index() << "|"\
+              << std::setw(10) << contacts[i].get_first_name() << "|"\
+             << std::setw(10) << contacts[i].get_last_name()  << "|"\
+             << std::setw(10) << contacts[i].get_nick_name()  << std::endl;
     }
     return (1);
 }
 
-void Phonebook::search_contact(){
+void Phonebook::search_contact(void){
     std::string str;
     int         index;
 
@@ -52,9 +53,24 @@ void Phonebook::search_contact(){
     std::cout << "Enter the index of contact: ";
     std::cin >> index;
     if (index > 0 && index < 9 && contacts[index-1].check_contact() > 0)
-        contacts[index-1].print_contact();
+        contacts[index-1].print_info();
     else
-        std::cout << "Wrong index or doesn't exist";
+        std::cout << "Wrong index or doesn't exist" << std::endl;
 }
 
 
+void Phonebook::start_phonebook(void){
+    std::string     order;
+
+    while (1){
+    std::cout << "Enter your order(ADD, SEARCH, EXIT): ";
+    std::cin >> order;
+    if (!order.compare("ADD"))
+        this->add_contact();
+    else if (!order.compare("SEARCH"))
+        this->search_contact();
+    else if (!order.compare("EXIT"))
+        break;
+    }
+
+}
