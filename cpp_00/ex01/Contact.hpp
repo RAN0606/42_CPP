@@ -21,7 +21,7 @@ class Contact{
 		Contact(void);
 		~Contact(void);
 
-		void		set_all_info(int p_index);
+		int			set_all_info(int p_index);
 		void		print_info(void);
 		int			check_contact(void);
 		int 		get_index(void);
@@ -38,5 +38,10 @@ class Contact{
 		std::string	nick_name;
 		std::string	phone_number;
 		std::string	darkest_secret;
+		int			_setFirstName(void);
+		int			_setLastName(void);
+		int			_setNickName(void);
+		int			_setPhoneNb(void);
+		int			_setSecret(void);
 };
 #endif	

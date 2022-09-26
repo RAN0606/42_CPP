@@ -6,7 +6,7 @@
 /*   By: rliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:27:46 by rliu              #+#    #+#             */
-/*   Updated: 2022/09/22 16:50:23 by rliu             ###   ########.fr       */
+/*   Updated: 2022/09/26 18:05:40 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ bool Account::makeWithdrawal(int withdrawal) {
 	}
 	else{
 		this->_amount -= withdrawal;
-		Account:_totalAmount -= withdrawal;
+		Account::_totalAmount -= withdrawal;
 		this->_nbWithdrawals++;
 		Account::_totalNbWithdrawals++;
 		std::cout << " index:" << this->_accountIndex\
@@ -103,6 +103,18 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 void Account::_displayTimestamp(void){
+	time_t timenow;
+	struct tm *timeinfo;
+	char	buffer[80];
+	
+	time (&timenow);
+	timeinfo = localtime(&timenow);
+
+	strftime(buffer, 80, "[%Y%m%d_%H%M%S]", timeinfo);
+
+	std::cout << buffer;
+}
+/*void Account::_displayTimestamp(void){
 	time_t timenow;
 	struct tm * timeinfo;
 	
@@ -124,7 +136,8 @@ void Account::_displayTimestamp(void){
 	if (timeinfo->tm_sec < 10)
 		std::cout << 0; 
 	std::cout << timeinfo->tm_sec << "]";
-}
+}*/
+
 //this is for the test
 /*void Account::_displayTimestamp(void){
 	std::cout << "[19920104_091532]";
