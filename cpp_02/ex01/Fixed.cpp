@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:02:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/10 21:05:38 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/14 17:08:09 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,23 @@ Fixed::~Fixed(void){
 }
 
 float Fixed::toFloat(void) const{
-    return ((float)this->_nbFixedPoint/(float)(1 << Fixed::_nbBitsFrac));
+    return ((float)this->_nbFixedPoint/(1 << _nbBitsFrac));
 }
 
 int Fixed::toInt(void) const{
     return (this->_nbFixedPoint >> Fixed::_nbBitsFrac);
 }
 
-Fixed &Fixed::operator= (Fixed &c){
+Fixed Fixed::operator= (Fixed c){
     std::cout << "Copy assignment operator called "
-    << "// <-- This line may be missing depending on your implementation"
     << std::endl;
-    if(this != &c)
-        *this = c;
+    if (this != &c)
+        this->_nbFixedPoint = c._nbFixedPoint;
     return (*this);
 }
 
-std::ostream  &operator<< (std::ostream &out, const Fixed nb){
-    out <<nb.toFloat();
+std::ostream &operator<< (std::ostream &out, Fixed const &nb ){
+    out << nb.toFloat();
     return (out);
 }
 

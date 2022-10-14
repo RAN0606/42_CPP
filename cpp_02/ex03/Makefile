@@ -6,16 +6,16 @@
 #    By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:03:43 by rliu              #+#    #+#              #
-#    Updated: 2022/10/14 17:20:21 by rliu             ###   ########.fr        #
+#    Updated: 2022/10/14 21:37:00 by rliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= a.out
+NAME 	:= bsp
 
-SRCS    := main.cpp Fixed.cpp
+SRCS    := main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJS := $(SRCS:%.cpp=%.o)
 
