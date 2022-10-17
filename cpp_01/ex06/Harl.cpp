@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:39:44 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/17 17:27:36 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:41:48 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void Harl::complain(int index){
 
     void            (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     
-    for (int i = index; i < 4 ; i++){
-        (this->*f[i])();
+        (this->*f[index])();
         std::cout << std::endl;
     }
-}

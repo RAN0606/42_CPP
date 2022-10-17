@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:47:52 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 21:55:01 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 15:51:22 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ Point::Point(void): _fixedX(Fixed(0)), _fixedY(Fixed(0)){}
 
 Point::Point(float fx, float fy):_fixedX(Fixed(fx)), _fixedY(Fixed(fy)){}
 
-Point::Point(Point const &copiePoint){
-    this->_fixedX = copiePoint._fixedX;
-    this->_fixedY = copiePoint._fixedY;
+Point::Point(Point const &copiePoint):_fixedX(copiePoint._fixedX), _fixedY(copiePoint._fixedY){
+
 } 
 
 Point::~Point(void){};
@@ -40,7 +39,7 @@ Fixed Point::getY(void){
     return(this->_fixedY);
 }
 
-Point Point::operator= (Point &assignPoint){
+Point Point::operator= (Point &assignPoint)_fixedX(copiePoint._fixedX), _fixedY(copiePoint._fixedY){
       if (this != &assignPoint)
         this->_fixedX = assignPoint._fixedX;
         this->_fixedY = assignPoint._fixedY; 
