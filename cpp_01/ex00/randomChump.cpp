@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rliu <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:42:16 by rliu              #+#    #+#             */
-/*   Updated: 2022/09/28 17:51:17 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 16:28:53 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include <string>
-Zombie* newZombie(std::string name);
 
 void randomChump(std::string name){
 
-	Zombie* somezombie = newZombie(name);
+	Zombie somezombie(name);
 
-	somezombie->annoncent();
+	somezombie.annoncent();
 
-	delete somezombie;
 }

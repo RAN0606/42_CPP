@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:50:42 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/17 14:39:41 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:24:37 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,13 @@ int main(int argc, char **argv){
     }
     switch (x){
 
-        case DEBUG      :   for (int i = DEBUG; i <= ERROR; i++){ 
-                                instanceHarl.complain(complainType[i]);
-                                std::cout << std::endl;
-                            };
+        case DEBUG      :   instanceHarl.complain(DEBUG);
                             break;
-        case INFO       :   for (int i = INFO; i <= ERROR; i++){ 
-                            instanceHarl.complain(complainType[i]);
-                            std::cout << std::endl;
-                            };
+        case INFO       :   instanceHarl.complain(INFO);
                             break;
-        case WARNING    :   for (int i = WARNING; i <= ERROR; i++){ 
-                            instanceHarl.complain(complainType[i]);
-                            std::cout << std::endl;
-                            };
+        case WARNING    :   instanceHarl.complain(WARNING);
                             break;
-        case ERROR      :   instanceHarl.complain(complainType[x]);
-                            std::cout << std::endl;
+        case ERROR      :   instanceHarl.complain(ERROR);
                             break;
         case BLABLA     :   std::cout << "[Probably complaining about insignificant problems]" 
                             << std::endl;

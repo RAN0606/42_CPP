@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:24:18 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/04 12:10:16 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 17:24:25 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Harl{
         Harl(void);
         ~Harl(void);
         void complain(std::string level);
+        void complain(int index);
     
     private:
         void debug(void);
