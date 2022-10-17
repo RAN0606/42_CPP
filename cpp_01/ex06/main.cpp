@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:50:42 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/04 16:45:21 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 14:39:41 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int argc, char **argv){
     Harl            instanceHarl;
     
     if (argc != 2){
-        std::cout <<"Please put 2 arguments, ex: ./Harlfileter WARNING " << std::endl;
+        std::cout <<"Please put 2 arguments, ex: ./Harlfileter WARNING/DEBUG/INFO/ERROR " << std::endl;
         return (1);
     }
 
