@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:21:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 21:48:46 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 19:13:23 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int main() {
     
-        Point const 	a(0, 0);
-		Point const 	b(10, 30);
-		Point const 	c(20, 0);
-	
+        Point const	a(0, 0);
+		Point const b(10, 30);
+		Point const	c(20, 0);
+		Point const	d(15,0);
 
-		/*points[0] = Point(10, 15);
+	/*	points[0] = Point(10, 15);
 		points[1] = Point(30, 15);
 		points[2] = Point(0, 0);
 		points[3] = Point(10, 30);
@@ -35,7 +35,7 @@ int main() {
 		std::cout << "c : " << "(" << c.getX().toFloat() << ", " << c.getY().toFloat() << ")" << std::endl;
 		std::cout << std::endl;*/
 	
-		std::cout << "bool 1 or 0 :" << bsp(a,b,c ,Point(10, 15)) << std::endl;
+		std::cout << "bool 1 or 0 :" << bsp(a,b,c ,d) << std::endl;
 
 	return 0;
 }

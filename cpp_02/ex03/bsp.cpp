@@ -6,14 +6,14 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:37:20 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 21:33:14 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 19:12:55 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-Fixed squareTri(Point const a, Point const b, Point const c){
+Fixed squareTri(Point a, Point b, Point  c){
     Fixed squareT;
     squareT = ((a.getX()*b.getY())-(b.getX()*a.getY()))
                 + ((b.getX()*c.getY()) - c.getX()*b.getY())
@@ -22,8 +22,8 @@ Fixed squareTri(Point const a, Point const b, Point const c){
     return (squareT);
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point){
-    if (squareT(a, b, c) = (squareT(a, b, point) + squareT(a, c, point) + squareT(b, c, point)))
-        return (True);
-    return (False);    
+bool bsp( Point  a, Point  b, Point  c, Point  point){
+    if (squareTri(a, b, c) == (squareTri(a, b, point) + squareTri(a, c, point) + squareTri(b, c, point)))
+        return (true);
+    return (false);    
 }

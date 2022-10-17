@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:47:52 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/17 15:51:22 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/17 19:10:14 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ Point::~Point(void){};
 void Point::setY(float paraY){
     this_->_fixedX = Fixed(paraX);
 }*/
-
 Fixed Point::getX(void){
     return(this->_fixedX);
 }
@@ -39,9 +38,12 @@ Fixed Point::getY(void){
     return(this->_fixedY);
 }
 
-Point Point::operator= (Point &assignPoint)_fixedX(copiePoint._fixedX), _fixedY(copiePoint._fixedY){
-      if (this != &assignPoint)
-        this->_fixedX = assignPoint._fixedX;
-        this->_fixedY = assignPoint._fixedY; 
+Point Point::operator= (Point &assignPoint){
+      if (this != &assignPoint){
+        Fixed* x= (Fixed *) &(this->_fixedX);
+        *x = assignPoint._fixedX;
+        Fixed* y = (Fixed *)&(this->_fixedY);
+        *y = assignPoint._fixedY;
+      }
     return (*this);
 }
