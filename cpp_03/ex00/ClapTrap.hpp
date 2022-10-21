@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:00:05 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/20 13:37:26 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/21 16:19:40 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 class ClapTrap{
     public:
+        ClapTrap(void);
         ClapTrap(std::string name);
         ClapTrap(ClapTrap &claptrapCopie);
         ~ClapTrap(void);
@@ -27,10 +28,10 @@ class ClapTrap{
         void beRepaired(unsigned int amount);
         
     private:
-        std::string     _name;
-        int             _hitPoints;
-        int             _energyPoints;
-        int             _attackDamage;
-}
+        std::string         _name;
+        long long int       _hitPoints;
+        long long int       _energyPoints;
+        long long int       _attackDamage;
+};
 
 #endif
