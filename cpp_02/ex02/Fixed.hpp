@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:55:53 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 19:50:29 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:48:57 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed{
         Fixed(float const f);
         ~Fixed(void);
 
-        Fixed   operator= (Fixed c);
+        Fixed   &operator= (Fixed const &c);
         bool    operator> (Fixed const& a);
         bool    operator< (Fixed const& a);
         bool    operator>= (Fixed const& a);

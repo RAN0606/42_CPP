@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:02:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 17:08:09 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/19 15:00:00 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 #include <iostream>
 #include <cmath>
 
+int const Fixed::_nbBitsFrac = 8;
+
 Fixed::Fixed(void):_nbFixedPoint(0){
     std::cout << "Default constructor called" << std::endl;
+    
 }
 
-Fixed::Fixed(Fixed const &copie){
+Fixed::Fixed(Fixed const &copief){
     std::cout << "Copy constructor called" << std::endl;
-    this->_nbFixedPoint = copie.getRawBits();
+    *this = copief;
+    return;
 }
 
 Fixed::Fixed(const int i):_nbFixedPoint(i << Fixed::_nbBitsFrac){
@@ -35,26 +39,19 @@ Fixed::~Fixed(void){
      std::cout << "Destructor called" << std::endl;
 
 }
-
 float Fixed::toFloat(void) const{
-    return ((float)this->_nbFixedPoint/(1 << _nbBitsFrac));
+    return ((float)this->_nbFixedPoint/(1 << Fixed::_nbBitsFrac));
 }
 
 int Fixed::toInt(void) const{
     return (this->_nbFixedPoint >> Fixed::_nbBitsFrac);
 }
-
-Fixed Fixed::operator= (Fixed c){
-    std::cout << "Copy assignment operator called "
-    << std::endl;
-    if (this != &c)
-        this->_nbFixedPoint = c._nbFixedPoint;
+Fixed &Fixed::operator= (Fixed const &c){
+    std::cout << "Copy assignment operator called " << std::endl;
+    if (this == &c)
+        return *this;
+    this->setRawBits(c.getRawBits());
     return (*this);
-}
-
-std::ostream &operator<< (std::ostream &out, Fixed const &nb ){
-    out << nb.toFloat();
-    return (out);
 }
 
 int Fixed::getRawBits(void) const{
@@ -63,4 +60,8 @@ int Fixed::getRawBits(void) const{
 
 void Fixed::setRawBits(int const raw){
     this->_nbFixedPoint = raw;
+}
+std::ostream &operator<< (std::ostream &out, Fixed const &nb ){
+    out << nb.toFloat();
+    return (out);
 }

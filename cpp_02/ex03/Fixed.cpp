@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:02:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 21:39:13 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/19 15:14:16 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ float Fixed::toFloat(void) const{
 }
 
 int Fixed::toInt(void) const{
-    return (this->_nbFixedPoint >> Fixed::_nbBitsFrac);
+    return (this->_nbFixedPoint /(1<< Fixed::_nbBitsFrac));
 }
 
 int Fixed::getRawBits(void) const{

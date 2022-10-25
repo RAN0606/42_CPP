@@ -6,35 +6,46 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:10:41 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/25 17:22:44 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/25 17:07:14 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include <iostream>
+#include <string>
 
 int main(void)
 {
-    ClapTrap ctA("A");
-    ClapTrap ctB(ctA);
-    ClapTrap ctC;
+    DiamondTrap dtA("A");
+    DiamondTrap dtB(dtA);
+    DiamondTrap dtC;
 
-    ctC = ctA;
-    ctA.takeDamage(1);
-    for (int i = 0; i< 7; i++)
-    ctA.attack("aaaaaaaaaa");
-    for (int i = 0; i < 6 ; i++)
-    ctA.beRepaired(2);
+    dtC = dtA;
     
-    ctB.takeDamage(1);
+    dtA.whoAmI();
     for (int i = 0; i< 7; i++)
-    ctB.attack("bbbbbbbbbb");
-    for (int i = 0; i < 6 ; i++)
-    ctB.beRepaired(2);
+    dtA.attack("aaaaaaaaaa");
+    dtA.guardGate();
+    dtA.highFivesGuys();
+    for (int i = 0; i < 6 ; i++);
+    //dtA.beRepaired(2);
+    
+    dtB.whoAmI();
+    for (int i = 0; i< 7; i++)
+    dtB.attack("bbbbbbbbbb");
+    dtB.guardGate();
+    for (int i = 0; i < 6 ; i++);
+    //dtB.beRepaired(2);
+    
+    dtC.whoAmI();
+    for (int i = 0; i< 7; i++)
+    dtC.attack("cccccccccc");
+    for (int i = 0; i < 6 ; i++);
+    //dtC.beRepaired(2);
+    dtC.guardGate();
 
-    for (int i = 0; i< 7; i++)
-    ctC.attack("cccccccccc");
-    for (int i = 0; i < 6 ; i++)
-    ctC.beRepaired(2);
-    
     return (0);
 }

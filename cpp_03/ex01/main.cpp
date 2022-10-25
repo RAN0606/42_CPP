@@ -6,35 +6,39 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 16:10:41 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/25 17:22:44 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/25 17:32:12 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-
+#include <string>
 int main(void)
 {
-    ClapTrap ctA("A");
-    ClapTrap ctB(ctA);
-    ClapTrap ctC;
-
-    ctC = ctA;
-    ctA.takeDamage(1);
-    for (int i = 0; i< 7; i++)
-    ctA.attack("aaaaaaaaaa");
-    for (int i = 0; i < 6 ; i++)
-    ctA.beRepaired(2);
+    ScavTrap stA("A");
+    ScavTrap stB(stA);
+    ScavTrap stC;
     
-    ctB.takeDamage(1);
+    stC = stA;
+    
     for (int i = 0; i< 7; i++)
-    ctB.attack("bbbbbbbbbb");
+    stA.attack("aaaaaaaaaa");
+    stA.guardGate();
     for (int i = 0; i < 6 ; i++)
-    ctB.beRepaired(2);
+    stA.beRepaired(2);
+    
+    stB.takeDamage(2);
+    for (int i = 0; i< 7; i++)
+    stB.attack("bbbbbbbbbb");
+    stB.guardGate();
+    for (int i = 0; i < 6 ; i++)
+    stB.beRepaired(2);
 
     for (int i = 0; i< 7; i++)
-    ctC.attack("cccccccccc");
+    stC.attack("cccccccccc");
     for (int i = 0; i < 6 ; i++)
-    ctC.beRepaired(2);
+    stC.beRepaired(2);
+    stC.guardGate();
     
     return (0);
 }

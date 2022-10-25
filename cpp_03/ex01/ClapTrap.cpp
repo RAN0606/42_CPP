@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:14:01 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/25 17:23:48 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/25 10:26:28 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,13 @@ ClapTrap &ClapTrap::operator= (const ClapTrap &clapAssigne){
     this->_energyPoints = clapAssigne._energyPoints;
     return (*this);
 }
-void ClapTrap::setName(std::string name){
-    this->_name = name;
-}
 
 void ClapTrap::attack(const std::string& target){
     
     if (this->_hitPoints <= 0)
-        std::cout << this->_name << " has no life, can't attack!" << std::endl;
+        std::cout << "ClapTrap" << this->_name << " has no life, can't attack!" << std::endl;
     else if (this->_energyPoints == 0)
-        std::cout << this->_name << " has no energy, can't attack!" << std::endl;
+        std::cout << "ClapTrap" << this->_name << " has no energy, can't attack!" << std::endl;
     else{
         std::cout << "ClapTrap " << this->_name << " attacks " << target << ", ";
         takeDamage(this->_attackDamage);

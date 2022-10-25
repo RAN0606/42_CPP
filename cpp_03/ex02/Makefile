@@ -6,16 +6,16 @@
 #    By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:03:43 by rliu              #+#    #+#              #
-#    Updated: 2022/10/10 14:50:37 by rliu             ###   ########.fr        #
+#    Updated: 2022/10/25 11:22:46 by rliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= c++
 CFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= Fixed
+NAME 	:= FragTrap
 
-SRCS    := main.cpp Fixed.cpp
+SRCS    := main.cpp ClapTrap.cpp FragTrap.cpp
 
 OBJS := $(SRCS:%.cpp=%.o)
 
@@ -25,10 +25,11 @@ OBJS := $(SRCS:%.cpp=%.o)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ 
 
+
 all: $(NAME)
 
 clean:	
-		rm -rf $(OBJS)
+		rm -rf $(OBJS) 
 
 fclean: clean
 		rm -rf $(NAME)

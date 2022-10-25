@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:23:26 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/17 19:12:18 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/19 15:39:44 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ class Point{
         Fixed getY(void);
 };
 
-bool bsp( Point a, Point  b, Point c, Point point);
+bool bsp( Point const a, Point const  b, Point const c, Point const point);
 #endif

@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:02:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 19:54:58 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:48:28 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,14 @@ const Fixed&   Fixed::max(Fixed const& a, Fixed const& b){
 
 
 /**********operator**************/
-Fixed Fixed::operator= (Fixed c){
-    std::cout << "Copy assignment operator called "
-    << std::endl;
-    if (this != &c)
-        this->_nbFixedPoint = c._nbFixedPoint;
+Fixed &Fixed::operator= (Fixed const &c){
+    std::cout << "Copy assignment operator called " << std::endl;
+    if (this == &c)
+        return *this;
+    this->setRawBits(c.getRawBits());
     return (*this);
 }
+
 
 bool Fixed::operator> (Fixed const& a){
     return (this->getRawBits() > a.getRawBits());

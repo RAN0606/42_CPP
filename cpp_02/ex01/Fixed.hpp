@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:55:53 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/14 15:34:21 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/18 17:40:30 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Fixed{
     private:
         int _nbFixedPoint;
-        static int const _nbBitsFrac = 8;
+        static int const _nbBitsFrac;
         
     public:
         Fixed(void);
@@ -26,7 +26,7 @@ class Fixed{
         Fixed(float const f);
         ~Fixed(void);
 
-        Fixed   operator= (Fixed c);
+        Fixed &operator= (Fixed const &r);
        
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
