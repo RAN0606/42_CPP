@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:03:27 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/26 17:32:26 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/26 17:48:04 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ j->makeSound();
 meta->makeSound();
 delete meta;
 delete i;
+delete j;
 std::cout << "*****************************" <<std::endl;
 const WrongAnimal* metawrong = new WrongAnimal();
 const WrongAnimal* iwrong = new WrongCat();
