@@ -6,12 +6,13 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:51:28 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/27 16:54:07 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/28 15:02:06 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "MateriaSource.hpp"
+#include "ICharacter.hpp"
 #include "Character.hpp"
 #include "IMateriaSource.hpp"
 #include "Ice.hpp"

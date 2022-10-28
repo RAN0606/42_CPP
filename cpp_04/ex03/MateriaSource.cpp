@@ -6,13 +6,13 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:32:59 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/27 16:33:48 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/28 15:18:28 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 #include "AMateria.hpp"
-
+#define SOURCE 4
 MateriaSource::MateriaSource(void){
     for(int i = 0; i < SOURCE; i++)
         this->_source[i] = NULL;

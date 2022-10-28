@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 14:45:21 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/27 16:58:28 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/28 15:25:09 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define AMATERIA_HPP
 # include <string>
 # include "ICharacter.hpp"
-
+# include "Character.hpp"
+class ICharacter;
 class AMateria
 {
     protected:

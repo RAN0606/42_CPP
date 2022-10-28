@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:23:53 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/27 16:23:34 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/28 15:14:46 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@
 
 AMateria::AMateria(void){}
 AMateria::AMateria(std::string const &type) :_type(type){}
-Amateria::AMateria(const AMateria &tocopie){
+AMateria::AMateria(const AMateria &tocopie){
     *this = tocopie;
 }
 AMateria::~AMateria(void){}
 
 AMateria &AMateria::operator=(const AMateria &toassigne){
     this->_type = toassigne._type;
+    return(*this);
 }
-std::string const &AMaterial::getType() const {
+std::string const &AMateria::getType() const {
     return(this->_type);
 }
 
-Void AMateria::use(ICharacter& target){
+void AMateria::use(ICharacter& target){
     std::cout << target.getName() << std::endl; 
 }
