@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:32:59 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/28 15:18:28 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 17:13:24 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ MateriaSource::MateriaSource(void){
 }
 
 MateriaSource::MateriaSource(MateriaSource const &src){
-     for(int i = 0; i < SOURCE; i++) {  //带* 深拷贝
-        if (src._source[i]) {
-               this->_source[i] = src._source[i]->clone(); //取得src的ametria运行返回一个new
-        }
-    }
+    *this = src;
 }
 MateriaSource::~MateriaSource(){
      for(int i = 0; i < SOURCE; i++) {

@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:56:36 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/28 15:13:02 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 14:59:49 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 # include "AMateria.hpp"
 
 class Ice : public AMateria{
-    protected:
-
     public:
-            Ice(std::string const & type);
             Ice(void);
             Ice(const Ice &copy);
             ~Ice (void);
@@ -26,7 +23,7 @@ class Ice : public AMateria{
             Ice &operator= (const Ice &assigne);
             
             std::string const & getType() const; //Returns the materia type
-            Ice* clone();
+            AMateria* clone() const;
             void use(ICharacter& target);
 };
 

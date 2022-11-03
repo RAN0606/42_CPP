@@ -6,12 +6,13 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:37:20 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/27 16:50:58 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 17:15:35 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include <string>
+#define INVENTORY 4
 Character::Character(void): _name("Unknow"){
     for(int i = 0; i < INVENTORY; i++)
         this->_amatria[i] = NULL;
@@ -23,12 +24,7 @@ Character::Character(std::string const &name): _name(name) {
 }
 
 Character::Character(Character const &src) {
-    this->_name = src._name; 
-    for(int i = 0; i < INVENTORY; i++) {  //* deep copy 
-        if (src._amatria[i]) {
-               this->_amatria[i] = src._amatria[i]->clone(); //return new
-        }
-    }
+    *this = src;
 }
 
 Character::~Character(void) {
@@ -73,8 +69,10 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
     if(idx < 0 || idx >= INVENTORY)
         std::cout << "idx is wrong !" << std::endl;
-    if (this->_amatria[idx])
+    else if (this->_amatria[idx]){
+        delete this->_amatria[idx];
         this->_amatria[idx] = NULL;
+    }
 }
 
 void Character::use(int idx, ICharacter& target) {

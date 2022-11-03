@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 14:02:39 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/21 15:04:02 by rliu             ###   ########.fr       */
+/*   Updated: 2022/10/28 14:59:43 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ void Fixed::setRawBits(int const raw){
      std::cout << "setRawbits member function called" <<std::endl;
     this->_nbFixedPoint = raw;
 }
-

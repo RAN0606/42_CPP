@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:53:37 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/28 15:16:29 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 17:29:16 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 #include <string>
 #include <iostream>
 
-Cure::Cure(void):AMateria(){}
-Cure::Cure(std::string const &type) :AMateria(type){}
-Cure::Cure(const Cure &tocopie){
+Cure::Cure(void):AMateria("cure"){}
+Cure::Cure(const Cure &tocopie):AMateria("cure"){
     *this = tocopie;
 }
 Cure::~Cure(void){}
@@ -29,8 +28,8 @@ Cure &Cure::operator=(const Cure &toassigne){
 }
 
 
-Cure* Cure::clone(){
-    return(new Cure());
+AMateria* Cure::clone() const{
+    return(new Cure(*this));
 }
 
 void Cure::use(ICharacter& target){

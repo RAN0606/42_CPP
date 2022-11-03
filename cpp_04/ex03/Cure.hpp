@@ -5,14 +5,13 @@ class Cure : public AMateria{
     protected:
 
     public:
-            Cure(std::string const & type);
             Cure(void);
             Cure(const Cure &copy);
             ~Cure (void);
 
             Cure &operator= (const Cure &assigne);
             
-            Cure* clone();
+            AMateria* clone() const;
             void use(ICharacter& target);
 };
 
