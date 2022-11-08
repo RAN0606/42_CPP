@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:04:05 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/08 11:04:53 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/08 16:45:11 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ class Form{
         Form(void);
         Form(std::string const name, unsigned int const gradeSign, unsigned int const gradeExecut);
         Form(Form &copie);
-        ~Form(void);
+        virtual ~AForm(void);
 
-        Form &operator=(Form &assigne);
+        AForm &operator=(AForm &assigne);
         
         std::string         getName(void)           const;
         bool                getSigned(void);
         unsigned int        getGradeSign(void)      const;
         unsigned int        getGradeExecut(void)    const;
-        void                beSigned(Bureaucrat &bc);
+        virtual void        beSigned(Bureaucrat &bc) = 0;
         
         class GradeTooHighException:public std::exception{
             virtual const char* what() const throw ();
@@ -45,7 +45,7 @@ class Form{
         class GradeTooLowException:public std::exception{
             virtual const char* what() const throw();
         };
-                      
+        virtual void	execute(Bureaucrat const & executor) const = 0;              
 };
 
 std::ostream &operator<<(std::ostream& out, Form &fc);
