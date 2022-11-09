@@ -6,19 +6,20 @@
 #    By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 16:18:42 by rliu              #+#    #+#              #
-#    Updated: 2022/11/09 16:27:50 by rliu             ###   ########.fr        #
+#    Updated: 2022/11/09 19:11:16 by rliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= c++
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
-NAME 	:= FormTree
+NAME 	:= Intern
 SRCS    :=	main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp 
+			PresidentialPardonForm.cpp \
+			Intern.cpp 
 
 OBJS := $(SRCS:%.cpp=%.o)
 %.o: %.cpp
