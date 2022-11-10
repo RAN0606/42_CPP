@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:20:32 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/09 16:14:38 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/10 13:41:04 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,21 @@ Form &Form::operator=(Form const &assigne){
     if(this == &assigne)
         return(*this);
    
-     std::string *tmp = (std::string *)&this->_name;
-    int *stmp = (int *)&this->_gradeSign;
-    int *etmp = (int *)&this->_gradeExecut;
-    *tmp = assigne.getName();
-    *stmp = assigne.getGradeSign();
-    *etmp = assigne.getGradeExecut();
+    (std::string &)this->_name = assigne.getName();
+    (unsigned int &)this->_gradeSign = assigne.getGradeSign();
+    (unsigned int &)this->_gradeExecut = assigne.getGradeExecut();
     this->_issigned = assigne._issigned;
     return (*this);
 }
 // function to set the private attribute
 void Form::setName(std::string name){
-    std::string *tmp = (std::string *)&this->_name;
-    *tmp = name;
+    (std::string &)this->_name  = name;
 }
 void Form::setGradeSign(unsigned int signgrade){
-    int *stmp = (int *)&this->_gradeSign;
-    *stmp = signgrade;
+    (unsigned int &)this->_gradeSign = signgrade;
 }
 void  Form::setGradeExecut(unsigned int exegrade){
-    int *etmp = (int *)&this->_gradeExecut;
-    *etmp = exegrade;
+    (unsigned int &)this->_gradeExecut = exegrade;
 }
 void Form::setIsSigned(bool isSigned){
     this->_issigned = isSigned;

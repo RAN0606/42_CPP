@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:20:32 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/08 11:04:38 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/10 13:28:33 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,9 @@ Form::~Form(void){
 Form &Form::operator=(Form &assigne){
     if(this == &assigne)
         return(*this);
-   
-     std::string *tmp = (std::string *)&this->_name;
-    int *stmp = (int *)&this->_gradeSign;
-    int *etmp = (int *)&this->_gradeExecut;
-    *tmp = assigne.getName();
-    *stmp = assigne.getGradeSign();
-    *etmp = assigne.getGradeExecut();
+    (std::string &)this->_name = assigne.getName();
+    (unsigned int &)this->_gradeSign = assigne.getGradeSign();
+    (unsigned int &)this->_gradeExecut = assigne.getGradeExecut();
     this->_issigned = assigne._issigned;
     return (*this);
 }

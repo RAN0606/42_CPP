@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:46:38 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/09 16:20:33 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/10 13:36:54 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const{
         throw Form::unsignedException();
     std::string     fileName = this->_target +"_shrubbery";
     char    fileNamec[fileName.length() + 1];
-    strcpy(fileNamec, fileName.c_str());
-    std::fstream fileTree(fileNamec);
+    std::strcpy(fileNamec, fileName.c_str());
+    std::ofstream fileTree(fileNamec);
     if (!fileTree.is_open()){
         std::cout << "error openfile!" << std::endl;
         return;

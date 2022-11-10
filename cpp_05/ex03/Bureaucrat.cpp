@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:16:53 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/09 16:12:51 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/10 13:29:38 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Bureaucrat::~Bureaucrat(void){
 Bureaucrat &Bureaucrat::operator=(Bureaucrat &toassigne){
    std::cout << "Bureaucrat copy assignment operator overload called\n";
 	this->_grade = toassigne._grade;
-    //this->_name = toassigne._name;
+    (std::string &)this->_name = toassigne._name;
 	return (*this);
 }
 
