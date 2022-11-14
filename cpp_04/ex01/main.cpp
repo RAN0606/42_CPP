@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:03:27 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/26 19:47:12 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 18:16:52 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ const WrongAnimal* iwrong = new WrongCat();
  metawrong->makeSound();
  delete metawrong;
  delete iwrong;*/
- int	nbr = 4;
+ 	int	nbr = 4;
 	Animal *animals[nbr];
 	std::cout << "------create dogs and cats-------\n" <<  std::endl;
 	for (int i = 0; i < nbr; i++) {
@@ -79,6 +79,7 @@ std::cout << "************print cutee ideas list *********************"<<std::en
 cutee.printIdea();
 std::cout << std::endl;
 std::cout <<"*******************" <<std::endl;
+
 Dog doggy;
 std::cout << std::endl;
 
@@ -86,7 +87,7 @@ doggy.addIdea("Dog idea 1");
 doggy.addIdea("Dog idea 2");
 std::cout << std::endl;
 
-Dog dd(doggy);
+Dog dd=doggy;
 dd.addIdea("dd idea 1");
 std::cout << "************print doggy ideas list *********************"<<std::endl;
 doggy.printIdea();

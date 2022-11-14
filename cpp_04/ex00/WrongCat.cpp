@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:41:06 by rliu              #+#    #+#             */
-/*   Updated: 2022/10/26 17:21:53 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/03 17:55:34 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ WrongCat &WrongCat::operator=(const WrongCat &toAssigne){
     return (*this);
 }
 void WrongCat::makeSound(void) const{
-    std::cout << this->_type << "don't miaowwwwwww! But it barks " << std::endl;
+    std::cout << this->_type << " don't miaowwwwwww! But it barks " << std::endl;
 }
 
 /*void WrongCat::getType(void) const{
