@@ -6,13 +6,21 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:52:29 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/14 18:46:54 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/15 16:21:42 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONVERT_HPP
 # define CONVERT_HPP
 
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <exception>
+#include <cstdlib>
+#include <stdint.h>
+#include <climits>
+#include <ostream>
 
 class Convert{
         public:
@@ -25,21 +33,23 @@ class Convert{
                 operator int(void);
                 operator float(void);
                 operator double(void);
-            
-                listDataType(std::string data);
+
+                std::string getData(void);
+                void listDataType(void);
 
                 class noDisplayException: public std::exception{
                         public:
                                 virtual char const *what() const throw();
                 };
-                class impossibleException: public std::excetion{
+                class impossibleException: public std::exception{
                         public:
-                                virtual char const *what() const thorw();
-                }
+                                virtual char const *what() const throw();
+                };
             
                 Convert &operator=(Convert const &toassigne);
+                
         private:
-                std::string data;
+                std::string _data;
 };
 
 #endif
