@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:57:29 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/15 17:00:11 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/21 12:37:40 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,15 @@ Convert &Convert::operator=(Convert const &toassigne){
 
 Convert::operator char(void){
     const char* strptr = (this->_data).c_str();
-    char* endptr = NULL;
-    long  c = 0; 
-    c = std::strtol(strptr, &endptr, 10);
-    if ( strptr == endptr)
+    char*   endptr = NULL;
+    int     c = 0; 
+    c = std::strtold(strptr, &endptr);
+    std::cout << "test char" << *endptr << std::endl;
+    std::cout << "test c" << c << std::endl;
+    if ( strptr == endptr || (*endptr == 'f' && *(endptr+1) != '\0')
+    ||(*endptr  && *endptr != 'f')|| c < 0 || c > 127 )
         throw Convert::impossibleException();
+    
     if (c < 32 || c > 126){
         throw Convert::noDisplayException();
     }
@@ -51,8 +55,10 @@ Convert::operator int(void){
     const char* strptr = (this->_data).c_str();
     char* endptr = NULL;
     long  l = 0; 
-    l = std::strtol(strptr, &endptr, 10);
-    if(strptr == endptr || l > INT32_MAX || l < INT32_MIN)
+    l = std::strtold(strptr, &endptr);
+    if(strptr == endptr || l > INT32_MAX || l < INT32_MIN
+        ||(*endptr == 'f' && *(endptr+1) != '\0')
+        ||(*endptr  && *endptr != 'f'))
         throw Convert::impossibleException();
     return static_cast<int>(l);
 }
@@ -62,8 +68,9 @@ Convert::operator float(void){
     char* endptr = NULL;
     long double  f = 0; 
     f = std::strtold(strptr, &endptr);
-    if (strptr == endptr)
+    if (strptr == endptr || (*endptr == 'f' && *(endptr+1) != '\0'))
         throw Convert::impossibleException();
+    
     return static_cast<float>(f);
 }
 
@@ -72,7 +79,7 @@ Convert::operator double(void){
     char* endptr = NULL;
     long double  ld = 0; 
     ld = std::strtold(strptr, &endptr);
-    if (strptr == endptr)
+    if (strptr == endptr || (*endptr == 'f' && *(endptr+1) != '\0'))
         throw Convert::impossibleException();
     return static_cast<double>(ld);    
 }

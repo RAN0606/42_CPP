@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:52:29 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/15 16:21:42 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/18 11:16:28 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Convert{
                 Convert(void);
                 Convert(std::string data);
                 Convert(Convert const &tocopy);
-                ~Convert(void);
+                virtual ~Convert(void);
 
                 operator char(void);
                 operator int(void);
