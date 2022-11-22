@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:34:43 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/21 18:34:25 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/22 16:48:15 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void swap(T &a, T &b){
 
 template<typename T>
 T const &max(T &a, T &b){
-    return ((a > b)? a : b);
+    return ((a > b)? b : a);
 };
 
 template<typename T>

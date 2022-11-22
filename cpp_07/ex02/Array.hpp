@@ -6,7 +6,7 @@
 /*   By: rliu <rliu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 19:21:01 by rliu              #+#    #+#             */
-/*   Updated: 2022/11/21 19:53:31 by rliu             ###   ########.fr       */
+/*   Updated: 2022/11/22 14:20:04 by rliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,27 @@ class Array{
         unsigned int _size;
         
     public:
-        Array<T>(void): _array(new T[0]), _size(0){};
-        Array<T>(unsigned int n) :_array (new T[n]),_size (n){}
-        Array<T>(Array const & src){
-            *this =  src;
+        Array<T>(void){
+            this->_array = new T[0];
+            this->_size = 0;
         }
-        Array<T> &operator=(Array const &src){
+        Array<T>(unsigned int n) {
+            this->_array = new T[n];
+            this->_size = n;
+        }
+        Array<T>(Array<T> const & src){
+            this->_array = new T[src._size];
+            this->_size = src._size;
+            for (unsigned int i = 0; i< this->_size ; i++)
+                this->_array[i] = src._array[i]; 
+        }
+        Array<T> &operator=(Array<T> const &src){
             if (this == &src)
                 return (*this);
             if (this->_array)
-                delete this->_array;
-            this->_array = new T[src._size];
-            this->_size = src._size;
+                delete[] this->_array;
+            this->_array = new T[src.size()];
+            this->_size = src.size();
             for (unsigned int i = 0; i< this->_size ; i++)
                 this->_array[i] = src._array[i]; 
             return *this;
